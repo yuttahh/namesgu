@@ -1,29 +1,29 @@
 name: Namespace CI Build
 
 on:
-  workflow_dispatch:
-    push:
-        branches:
-              - main
+  workflow_dispatch:    # no value, just a trigger event
+  push:
+    branches:
+      - main
 
-              jobs:
-                build:
-                    name: Build with Namespace arm64-large
-                        runs-on: namespace-profile-arm64-large
+jobs:
+  build:
+    name: Build with Namespace arm64-large
+    runs-on: namespace-profile-arm64-large
 
-                            steps:
-                                  - name: Checkout code
-                                          ronment info
-                                             eckout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-                                                        echo "OS Info:"
-                                                                  oname -a
-                                                                            echo "CPU Count:"
-                                                                                      n  oc
-                                                                                                echo "Memmmand
-                                                                                                          free -h
-                                                                                                                 echo "Namesptest command
-                                                                                                                         run: |
-                                                                                                                                   echo "Namesptest command
-                                                                                                                                           run: |
-                                                                                                                                                     echo "Namespace runner is working 🚀"
+      - name: Show environment info
+        run: |
+          echo "OS Info:"
+          uname -a
+          echo "CPU Count:"
+          nproc
+          echo "Memory:"
+          free -h
+
+      - name: Run test command
+        run: |
+          echo "Namespace runner is working 🚀"
