@@ -1,0 +1,29 @@
+name: Namespace CI Build
+
+on:
+  workflow_dispatch:
+    push:
+        branches:
+              - main
+
+              jobs:
+                build:
+                    name: Build with Namespace arm64-large
+                        runs-on: namespace-profile-arm64-large
+
+                            steps:
+                                  - name: Checkout code
+                                          ronment info
+                                             eckout@v3
+
+                                                        echo "OS Info:"
+                                                                  oname -a
+                                                                            echo "CPU Count:"
+                                                                                      n  oc
+                                                                                                echo "Memmmand
+                                                                                                          free -h
+                                                                                                                 echo "Namesptest command
+                                                                                                                         run: |
+                                                                                                                                   echo "Namesptest command
+                                                                                                                                           run: |
+                                                                                                                                                     echo "Namespace runner is working 🚀"
